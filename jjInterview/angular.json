@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "jjInterview"
+  "defaultProject": "jjInterview",
+  "cli": {
+    "analytics": "6d1d44cd-5496-414e-9e49-91c9a5a01587"
+  }
 }
