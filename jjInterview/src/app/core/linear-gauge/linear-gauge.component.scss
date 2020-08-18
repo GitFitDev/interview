@@ -1,0 +1,15 @@
+.mat-slider-horizontal {
+  width: 100%;
+}
+:host ::ng-deep mat-slider.mat-slider.mat-slider-horizontal .mat-slider-ticks {
+  // make ticks fill full height
+  height: 50px;
+  // this will force show the ticks
+  opacity: 1;
+  background-size: 20px !important;
+  transform: translateZ(0px) translateX(5.05051%);
+}
+
+.mat-slider-wrapper {
+  height: 20px;
+}
