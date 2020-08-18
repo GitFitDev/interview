@@ -3,26 +3,36 @@
   <ng-container matColumnDef="customerId">
     <th mat-header-cell *matHeaderCellDef> Customer Id </th>
     <td mat-cell *matCellDef="let transaction"> {{transaction.customerId}} </td>
-    <td mat-footer-cell *matFooterCellDef></td>
+    <td mat-footer-cell *matFooterCellDef>
+      <button mat-button color="primary" (click)="getTotalDiscount()">Add Totals</button>
+    </td>
   </ng-container>
 
   <!-- Cost Column -->
   <ng-container matColumnDef="customerName">
     <th mat-header-cell *matHeaderCellDef> Customer Name </th>
     <td mat-cell *matCellDef="let transaction"> {{transaction.customerName}} </td>
-    <td mat-footer-cell *matFooterCellDef> Total </td>
+    <td mat-footer-cell *matFooterCellDef> Total Discount</td>
   </ng-container>
 
   <ng-container matColumnDef="discountPercentage">
     <th mat-header-cell *matHeaderCellDef>Discount Percentage</th>
-    <td mat-cell *matCellDef="let transaction"> {{transaction.discountPercentage | percent}} </td>
-    <td mat-footer-cell *matFooterCellDef>{{getTotalDiscount() | percent}}</td>
+    <td mat-cell *matCellDef="let transaction">
+      <mat-form-field>
+        <input matInput type="text" value="{{transaction.discountPercentage | percent}}">
+      </mat-form-field>
+    </td>
+    <td mat-footer-cell *matFooterCellDef>{{ total | percent}}</td>
   </ng-container>
 
   <!-- Cost Column -->
   <ng-container matColumnDef="marketShare">
     <th mat-header-cell *matHeaderCellDef>Market Share </th>
-    <td mat-cell *matCellDef="let transaction"> {{transaction.marketShare}} </td>
+    <td mat-cell *matCellDef="let transaction">
+      <mat-form-field>
+        <input matInput type="number" value="{{transaction.marketShare}}">
+      </mat-form-field>
+     </td>
     <td mat-footer-cell *matFooterCellDef></td>
   </ng-container>
 

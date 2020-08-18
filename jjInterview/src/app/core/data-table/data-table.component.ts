@@ -20,6 +20,7 @@ export class DataTableComponent implements OnInit {
     'discountPercentage',
     'marketShare'
   ];
+  total: any;
 
   hospitalClients: HospitalFunds[] = [
    { id: 1, customerId: 998816, customerName: "US General Hospital", discountPercentage: 0.42, marketShare: 1000000},
@@ -34,7 +35,7 @@ export class DataTableComponent implements OnInit {
 
     /** Gets the total cost of all transactions. */
     getTotalDiscount() {
-      return this.hospitalClients.map(t => t.discountPercentage).reduce((acc, value, index, array) => {
+      return this.total = this.hospitalClients.map(t => t.discountPercentage).reduce((acc, value, index, array) => {
         acc += value;
         if( index === array.length-1) {
           return acc/array.length;
